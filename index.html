@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIRD Tech - Tu Aliado Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=BE+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-teal: #2A9D8F;
+            --dark-teal: #113D4A;
+            --neutral-white: #FFFFFF;
+            --light-gray: #f8f8f8;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'BE Vietnam Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--neutral-white);
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-teal);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px; /* Adjust as needed */
+            margin-right: 10px;
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            color: var(--dark-teal);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--dark-teal);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn-primary {
+            background-color: var(--green-teal);
+            color: var(--neutral-white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #248b80; /* Slightly darker green-teal */
+        }
+
+        .hero-image {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* === NUEVA SECCIÓN: Quiénes Somos === */
+        .about-us {
+            padding: 80px 0;
+            background-color: var(--neutral-white); /* Fondo blanco para alternar */
+        }
+        
+        .about-us h2 {
+            text-align: center;
+            font-size: 36px;
+            color: var(--dark-teal);
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        /* === FIN DE LA NUEVA SECCIÓN === */
+
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-gray); /* Fondo gris claro para alternar */
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 36px;
+            color: var(--dark-teal);
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--neutral-white); /* Tarjetas blancas sobre fondo gris */
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            color: var(--green-teal);
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Call to Action Section */
+        .cta {
+            background-color: var(--dark-teal);
+            color: var(--neutral-white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-teal);
+            color: var(--neutral-white);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 5px solid var(--green-teal);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            margin-bottom: 20px;
+        }
+
+        .footer-section h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--green-teal);
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--neutral-white);
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons a {
+            color: var(--neutral-white);
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--green-teal);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 20px;
+            }
+
+            .nav-links a {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+            }
+
+            /* Estilos responsivos para 'Quiénes Somos' */
+            .about-content {
+                grid-template-columns: 1fr; /* Apila las columnas en móvil */
+                text-align: center;
+            }
+            .about-image {
+                margin-top: 30px;
+            }
+            .about-image img {
+                max-width: 100%;
+            }
+
+
+            .services h2, .cta h2, .about-us h2 {
+                font-size: 30px;
+            }
+
+            .cta p {
+                font-size: 18px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <img src="https://i.imgur.com/your-logo-jird-tech.png" alt="JIRD Tech Logo"> 
+                JIRD Tech
+            </a>
+            <nav class="nav-links">
+                <a href="#quienes-somos">Quiénes Somos</a> <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>JIRD Tech: Tu Aliado Digital Estratégico</h1>
+            <p>Impulsamos la eficiencia y el crecimiento de tu negocio a través de soluciones tecnológicas innovadoras en gestión de datos, automatización y desarrollo a medida.</p>
+            <a href="#servicios" class="btn-primary">Descubre nuestros servicios</a>
+            <div class="hero-image">
+                <img src="https://i.imgur.com/your-hero-image.png" alt="Digital transformation and data management"> 
+            </div>
+        </div>
+    </section>
+
+    <section id="quienes-somos" class="about-us">
+        <div class="container">
+            <h2>Quiénes Somos</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Somos un equipo de <strong>4 ingenieros de software</strong> y especialistas en datos, apasionados por resolver desafíos complejos. Con <strong>más de 6 años de experiencia</strong>, combinamos conocimiento técnico y visión estratégica para ofrecer consultoría de alto nivel y soluciones de datos que realmente impulsan el éxito de nuestros clientes.</p>
+                    <p>Nuestro enfoque principal son las empresas del <strong>sector salud, consultorios médicos, clínicas</strong>, empresas de servicios y Pymes que buscan optimizar sus procesos y tomar decisiones basadas en datos.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://i.imgur.com/your-team-image.png" alt="El equipo de JIRD Tech trabajando">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Consultoría en el Área de Datos</h3>
+                    <p>Transformamos tus datos en información valiosa. Ofrecemos análisis avanzado, gestión de expedientes digital y estrategias para una toma de decisiones informada.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Consultoría y Creación de Automatizaciones</h3>
+                    <p>Optimizamos tus procesos de negocio mediante la automatización inteligente, desde calendarios hasta flujos de trabajo, aumentando la productividad y reduciendo errores.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Desarrollos a la Medida</h3>
+                    <p>Creamos soluciones de software personalizadas que se adaptan perfectamente a las necesidades únicas de tu empresa, garantizando escalabilidad y eficiencia.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Agentes de Servicio Inteligentes</h3>
+                    <p>Implementamos sistemas de agentes de servicio para mejorar la interacción con tus clientes y la gestión interna, ofreciendo soporte eficiente y personalizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>¿Listo para digitalizar tu negocio?</h2>
+            <p>JIRD Tech es el socio ideal para clínicas, consultorios, empresas de servicios y PYMES que buscan innovar y crecer en la era digital.</p>
+            <a href="#contacto" class="btn-primary">Contáctanos Hoy</a>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JIRD Tech</h4>
+                    <p>Tu aliado digital.</p>
+                    <div class="social-icons">
+                        </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Teléfono: 87721545</p>
+                    <p>Email: <a href="mailto:info@jirdtech.com">info@jirdtech.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a href="#quienes-somos">Quiénes Somos</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 JIRD Tech. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
